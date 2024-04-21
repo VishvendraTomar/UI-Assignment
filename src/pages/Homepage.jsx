@@ -1,4 +1,5 @@
 
+import '../index.css'
 // import '../App.css'
 import ChatApp from '../components/ChatApp'
 import Sidebar from '../components/Sidebar'
