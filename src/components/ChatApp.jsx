@@ -1,11 +1,13 @@
 import React, { useState, useEffect, useRef } from 'react';
-import userImage from '../assets/react.svg'; // Import user image
-import modelImage from '../assets/react.svg'; // Import model image
+import modelImage from '../assets/react.svg';
+import { useNavigate } from 'react-router-dom'; 
 import "./ChatApp.css"
+
 const ChatApp = () => {
   const [messages, setMessages] = useState([]);
   const [inputText, setInputText] = useState('');
   const chatAreaRef = useRef(null);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const savedMessages = localStorage.getItem('chatHistory');
@@ -16,7 +18,6 @@ const ChatApp = () => {
 
   useEffect(() => {
     localStorage.setItem('chatHistory', JSON.stringify(messages));
-    // Scroll to the bottom of the chat area when messages change
     chatAreaRef.current.scrollTop = chatAreaRef.current.scrollHeight;
   }, [messages]);
 
@@ -40,34 +41,60 @@ const ChatApp = () => {
     }
   };
 
+  const handleLogout = () => {
+    localStorage.removeItem('isAuth');
+    navigate('/login');
+  };
+
   return (
     <div className="chat-container">
-      <div className="chat-area" ref={chatAreaRef}>
-        {messages.map((message, index) => (
-          <div key={index} className="message-container">
-            {message.fromUser ? (
-              <>
-                <img src={userImage} alt="User" className="user-image" />
-                <p>user</p>
-                <div className="user-message">{message.text}</div>
-              </>
-            ) : (
-              <>
-                <img src={modelImage} alt="Model" className="model-image" />
-                <p>chatGPT</p>
-                <div className="model-message">{message.text}</div>
-              </>
-            )}
-          </div>
-        ))}
+      <div className='topnav'>
+        <p>ChatGPT 3.5</p>
+      <button className="logout-button" onClick={handleLogout}>Logout</button> 
       </div>
-      <input
-        type="text"
-        value={inputText}
-        onChange={(e) => setInputText(e.target.value)}
-        onKeyPress={handleKeyPress} // Call handleKeyPress on key press
-      />
-      <button onClick={handleSendMessage}>Send</button>
+      <div className="chat-outer">
+        <div className="chat-area" ref={chatAreaRef}>
+          {messages.map((message, index) => (
+            <div key={index} className="message-container">
+              {message.fromUser ? (
+                <>
+                  <div className='user-info'>
+                    <div className='user-text'>
+                      <div className='img'>
+                        <img src="https://static.thenounproject.com/png/969639-200.png" alt="User" className="user-image" />
+                      </div>
+                      <p>user</p>
+                    </div>
+                    <div className="user-message">{message.text}</div>
+                  </div>
+                </>
+              ) : (
+                <>
+                  <div className='model-info'>
+                    <div className='model-text'>
+                      <div className='img'>
+                        <img src={modelImage} alt="Model" className="model-image" />
+                      </div>
+                      <p>chatGPT</p>
+                    </div>
+                    <div className="model-message">{message.text}</div>
+                  </div>
+                </>
+              )}
+            </div>
+          ))}
+        </div>
+      </div>
+      <div className='inputarea'>
+        <input
+          type="text"
+          value={inputText}
+          placeholder='Message ChatGPT...'
+          onChange={(e) => setInputText(e.target.value)}
+          onKeyPress={handleKeyPress}
+        />
+        <button onClick={handleSendMessage}>Send</button>
+      </div>
     </div>
   );
 };

@@ -1,14 +1,74 @@
 .chat-container {
+ 
     display: flex;
     flex-direction: column;
-    height: 400px; /* Set maximum height for chat container */
+    height: 100%; 
+    width: 100%;
+  }
+  .topnav{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+ display: flex;
+    justify-content: space-between;
+  }
+  .chat-outer {
+    flex: 1;
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    overflow-y: auto; 
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
   }
   
   .chat-area {
-    flex: 1; /* Allow chat area to grow vertically */
-    overflow-y: auto; /* Enable vertical scrolling when content exceeds height */
-    border: 1px solid #ccc; /* Add border for visual separation */
-    border-radius: 5px; /* Add border radius for rounded corners */
-    padding: 10px; /* Add padding to the chat area */
-    margin-bottom: 10px; /* Add margin at the bottom to separate input from chat area */
+    width: 600px; 
+  }
+  
+  .chat-outer::-webkit-scrollbar {
+    width: 0; 
+  }
+  
+  .inputarea {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px; 
+  }
+  
+  .inputarea > input {
+    width: 600px;
+    height: 35px;
+    border-radius: 15px;
+  }
+  
+  .inputarea > button {
+    height: 35px;
+    border-radius: 15px;
+    margin-left: 10px; 
+  }
+  .user-info{
+    margin-bottom: 20px;
+    margin-top: 20px;
+  }
+  .user-text{
+    display: flex;
+    height: 45px;
+  }
+  .img{
+    height: 100%;
+  }
+  .img>img{
+    height: 100%;
+  }
+  .user-message{
+    margin-left: 50px;
+  }
+  .model-text{
+    display: flex;
+    height: 45px;
+  }
+  .model-message{
+    margin-left: 50px   ;
   }

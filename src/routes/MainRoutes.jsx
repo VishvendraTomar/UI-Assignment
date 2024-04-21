@@ -5,15 +5,15 @@ import Signup from '../pages/Signup';
 import Login from '../pages/Login';
 
 const MainRoutes = () => {
-  const [isAuth, setIsAuth] = useState(false);
+  const [isAuth, setIsAuth] = useState(() => {
+    const isAuthenticated = localStorage.getItem('isAuthenticated');
+    return isAuthenticated === 'true';
+  });
 
   useEffect(() => {
-    const isAuthenticated = localStorage.getItem('isAuthenticated');
-    console.log('Authentication flag retrieved from localStorage:', isAuthenticated);
-    if (isAuthenticated === 'true') {
-      setIsAuth(true);
-    }
-  }, []);
+   
+    localStorage.setItem('isAuthenticated', isAuth);
+  }, [isAuth]);
 
   console.log('isAuth:', isAuth);
 
@@ -26,4 +26,4 @@ const MainRoutes = () => {
   );
 };
 
-export default MainRoutes;
+export default MainRoutes;
