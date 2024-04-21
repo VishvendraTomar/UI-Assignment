@@ -1,0 +1,14 @@
+.chat-container {
+    display: flex;
+    flex-direction: column;
+    height: 400px; /* Set maximum height for chat container */
+  }
+  
+  .chat-area {
+    flex: 1; /* Allow chat area to grow vertically */
+    overflow-y: auto; /* Enable vertical scrolling when content exceeds height */
+    border: 1px solid #ccc; /* Add border for visual separation */
+    border-radius: 5px; /* Add border radius for rounded corners */
+    padding: 10px; /* Add padding to the chat area */
+    margin-bottom: 10px; /* Add margin at the bottom to separate input from chat area */
+  }
