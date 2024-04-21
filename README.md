@@ -24,6 +24,7 @@ This project is a frontend application aimed at replicating the user interface (
     - Front-end validation for login form.
     - Typing and sending messages.
     - Automatic scrolling to the latest message.
+![Screenshot 2024-04-22 035017](https://github.com/VishvendraTomar/UI-Assignment/assets/95501800/b64af45d-8914-40e0-bcf5-a8c51130493a)
 
 5. **Tech Stack:**
     - React.js
@@ -32,11 +33,11 @@ This project is a frontend application aimed at replicating the user interface (
 
 6. **Extra Features :**
     - Form validation  
+ ![Screenshot 2024-04-22 032334](https://github.com/VishvendraTomar/UI-Assignment/assets/95501800/07896594-f601-4c2d-b0b9-3600ca5efc01)
+![Screenshot 2024-04-22 032843](https://github.com/VishvendraTomar/UI-Assignment/assets/95501800/1bc2e94f-1725-45eb-9836-d132ec5effcf)
     - Sending messages with the "Enter" key.
     - Responsive design enhancements.
 
- ![Screenshot 2024-04-22 032334](https://github.com/VishvendraTomar/UI-Assignment/assets/95501800/07896594-f601-4c2d-b0b9-3600ca5efc01)
-![Screenshot 2024-04-22 032843](https://github.com/VishvendraTomar/UI-Assignment/assets/95501800/1bc2e94f-1725-45eb-9836-d132ec5effcf)
 
 ## Usage
 1. Clone the repository:
