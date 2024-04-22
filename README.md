@@ -37,6 +37,8 @@ This project is a frontend application aimed at replicating the user interface (
 ![Screenshot 2024-04-22 032843](https://github.com/VishvendraTomar/UI-Assignment/assets/95501800/1bc2e94f-1725-45eb-9836-d132ec5effcf)
     - Sending messages with the "Enter" key.
     - Responsive design enhancements.
+    ![Screenshot 2024-04-22 154052](https://github.com/VishvendraTomar/UI-Assignment/assets/95501800/08952270-7d35-4a54-b928-ea461822f230)
+
 
 
 ## Usage
