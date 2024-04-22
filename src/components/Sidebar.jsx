@@ -1,18 +1,42 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import "../App.css";
 import userImage from '../assets/user.png';
 import modelImage from '../assets/gpt.png';
-
+import leftImag from '../assets/left_arrow.png'
 function Sidebar() {
+  const [isSidebarOpen, setIsSidebarOpen] = useState(true);
+
+  const toggleSidebar = () => {
+    setIsSidebarOpen(!isSidebarOpen);
+  };
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth <= 1420) {
+        setIsSidebarOpen(false);
+      }else if(window.innerWidth >=1450){
+        setIsSidebarOpen(true)
+      }
+    };
+
+    handleResize(); 
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
   return (
-    <div className='sidebar'>
-      <div className='topbutton'>
-        <div className='img'>
-          <img src={modelImage} alt="" />
-        </div>
-        <p> New chat</p>
-        <div className='img'></div>
+    <div className={`sidebar ${isSidebarOpen ? 'open' : 'closed'}`}>
+    <div className='topbutton'>
+      <div className='img'>
+        <img src={modelImage} alt="" />
       </div>
+      <p> New chat</p>
+      <div className='img' onClick={toggleSidebar}>
+        <img src={leftImag} alt="" />
+      </div>
+    </div>
       <div className='innercontent'>
         <div><h4>Study Planner AI App</h4></div>
         <div><h4>React Jsx Conversion</h4></div>

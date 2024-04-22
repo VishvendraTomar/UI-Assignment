@@ -8,19 +8,9 @@
     flex: 1;
   }
   
-  /* Media Query for mid-size screens */
+ 
   @media screen and (max-width: 1024px) {
-    .main {
-      flex-direction: column;
-    }
-  
-    .sidebar-container {
-      display: none; 
-    }
-  
-    .mainbar {
-      flex: none; 
-    }
+
   }
   
  
